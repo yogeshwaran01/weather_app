@@ -107,7 +107,7 @@ export default {
         navigator.geolocation.getCurrentPosition((position) => {
           var lat = position.coords.latitude;
           var lon = position.coords.longitude;
-          let url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=8e5d5c219dd7b7df4db4f188d6f99cb0`;
+          let url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=8e5d5c219dd7b7df4db4f188d6f99cb0`;
           fetch(url).then((response) => {
             response.json().then((data) => {
               this.yourlocation = data[0].name;
@@ -121,7 +121,7 @@ export default {
       }
     },
     getweather() {
-      let z = `http://api.openweathermap.org/data/2.5/weather?appid=8e5d5c219dd7b7df4db4f188d6f99cb0&q=${this.city}`;
+      let z = `https://api.openweathermap.org/data/2.5/weather?appid=8e5d5c219dd7b7df4db4f188d6f99cb0&q=${this.city}`;
       fetch(z)
         .then((res) => {
           this.checkfetch(res);
